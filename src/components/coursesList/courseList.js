@@ -1,13 +1,10 @@
 import React from 'react';
 import courses from '../../Data/courses.json'
 
-const courseList = () => {
-    console.log(courses);
+const CourseList = () => {
+    console.log(courses)
 
-    return <div>{
-    courses.map(course =><div>item</div>)
-    }</div>
-    
-};
+    return (<div>CourseList</div> );
+}
  
-export default courseList;
+export default CourseList;
