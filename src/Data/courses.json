@@ -5,4 +5,36 @@
     "price": 90,
     "isHot": true,
     "image": "https://images.pexels.com/photos/5533417/pexels-photo-5533417.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+},
+{
+    "id": 2,
+    "tittle": "PHP for all",
+    "author": "Juan ignacio Part",
+    "price": 20,
+    "isHot": true,
+    "image": "https://images.pexels.com/photos/13345750/pexels-photo-13345750.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+},
+{
+    "id": 3,
+    "tittle": "Ingenieria for Me",
+    "author": "Federico Tirapelli",
+    "price": 30,
+    "isHot": false,
+    "image": "https://images.pexels.com/photos/3207473/pexels-photo-3207473.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+},
+{
+    "id": 4,
+    "tittle": "Acompañando a Martha",
+    "author": "Dalmiro Toledo",
+    "price": 10,
+    "isHot": true,
+    "image": "https://images.pexels.com/photos/12217000/pexels-photo-12217000.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+},
+{
+    "id": 5,
+    "tittle": "Arquitectura Moderna",
+    "author": "Fernando Fola",
+    "price": 50,
+    "isHot": true,
+    "image": "https://images.pexels.com/photos/12309550/pexels-photo-12309550.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
 }
