@@ -1,5 +1,5 @@
 import React from "react"
-import CourseList from "./coursesList/courseList"
+import CourseList from "./CourseList/CourseList.js"
 
 const App = () => {
 
