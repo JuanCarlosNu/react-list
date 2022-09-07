@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const courseItem = () => {
+const courseItem = ({course}) => {
     return ( 
         <div  className='course'>
             <div className='img_container'> 
