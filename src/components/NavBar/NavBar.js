@@ -1,4 +1,5 @@
 import React from 'react';
+import './NavBar.css'
 
 
 const NavBar = () => {
@@ -8,11 +9,11 @@ const NavBar = () => {
                 <h2 className='logo'>This logo</h2>
                 <nav className='nav'>
                     <ul className='nav__list'>
-                        <li className='list__item'><a href='#' className='nav__link'>Home</a></li>
-                        <li className='list__item'><a href='#' className='nav__link'>Courses</a></li>
-                        <li className='list__item'><a href='#' className='nav__link'>About</a></li>
-                        <li className='list__item'><a href='#' className='nav__link'>Jobs</a></li>
-                        <li className='list__item'><a href='#' className='nav__link'>Blog</a></li>
+                        <li className='nav__item'><a href='#' className='nav__link'>Home</a></li>
+                        <li className='nav__item'><a href='#' className='nav__link'>Courses</a></li>
+                        <li className='nav__item'><a href='#' className='nav__link'>About</a></li>
+                        <li className='nav__item'><a href='#' className='nav__link'>Jobs</a></li>
+                        <li className='nav__item'><a href='#' className='nav__link'>Blog</a></li>
                     </ul>
                 </nav>
             </div>
