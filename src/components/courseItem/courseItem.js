@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './CourseItem.css'
 
 
@@ -14,7 +15,9 @@ const CourseItem = ({course}) => {
             />
             </div>
 
-            <h3 className='course__title m-left' >{course.title}</h3>
+           <Link to={'/courses/${course.id}'}>
+           <h3 className='course__title m-left' >{course.title}</h3>
+           </Link>
             <span className='course__author m-left' >{course.author}</span>
             <div className='course__price'>
             <span className='price__number'>{course.price}</span>
