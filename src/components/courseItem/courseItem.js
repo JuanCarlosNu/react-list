@@ -15,7 +15,7 @@ const CourseItem = ({course}) => {
             />
             </div>
 
-           <Link to={'/courses/${course.id}'}>
+           <Link to={`/courses/${course.id}`}>
            <h3 className='course__title m-left' >{course.title}</h3>
            </Link>
             <span className='course__author m-left' >{course.author}</span>
