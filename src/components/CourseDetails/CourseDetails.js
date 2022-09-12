@@ -1,7 +1,8 @@
 import React from 'react';
 
 
-const CourseDetails = () => {
+const CourseDetails = (props) => {
+    console.log(props.match.params.id)
     return (  
         <div> Course Details </div>
     );
