@@ -36,6 +36,7 @@
 .nav__link{
     text-decoration: none;
     color: #000;
+    transition: all .5s;
 }
 .btn{
     text-decoration: none;
@@ -52,4 +53,13 @@
 .btn-Signup{
     background-color: #000 ;
     color: #fff;
+}
+
+
+
+
+.active{
+    background-color: rgb(177, 180, 6);
+    padding: .5rem .8rem;
+    color: white;
 }

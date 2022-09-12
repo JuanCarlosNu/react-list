@@ -1,6 +1,6 @@
 import React from 'react';
 import './NavBar.css'
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 
 const NavBar = () => {
@@ -19,8 +19,8 @@ const NavBar = () => {
                 </nav>
             </div>
             <div className='header__buttons'>
-                <a href='#' className='btn btn-login'>Login</a>
-                <a href='#' className='btn btn-Signup'>Signup</a>
+                <Link to='/login' className='btn btn-login'>Login</Link>
+                <Link to='/signup' className='btn btn-Signup'>Signup</Link>
             </div>
 
             
