@@ -23,10 +23,15 @@ const CourseDetails = (props) => {
                 <h3 className='course__title--d'>{course.title}</h3>
                 <p className='course__desc--d'>{course.desc}</p>
                 <span className='course__price--d'>{course.price}</span>
+                {course.catigories.map(cat =>(
+                 <p>{cat}</p>
+                ))}
 
-            </div>
+                <p>{course.student}</p>
+                <p>{course.publishedDate}</p>
+           </div>
         </div>
-    );
-};
+        );
+    };
  
 export default CourseDetails; 
