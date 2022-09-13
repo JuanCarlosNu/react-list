@@ -17,16 +17,19 @@ const CourseDetails = (props) => {
              </div>
 
             <div className='course__content--d'>
-              <span className={course.isHot ? 'course__status' : ''}>
+                
+              <span className={course.isHot ? 'course__status--d' : ''}>
                 {course.isHot ? "Hot" : null}
              </span>
 
                 <h3 className='course__title--d'>{course.title}</h3>
                 <p className='course__desc--d'>{course.desc}</p>
                 <span className='course__price--d'>{course.price}</span>
+                <div className='catigories--d'>
                 {course.catigories.map(cat =>(
                  <p>{cat}</p>
-                ))}
+                 ))}
+                 </div>
 
                 <p>{course.student}</p>
                 <p>{course.publishedDate}</p>
