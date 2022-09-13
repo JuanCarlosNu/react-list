@@ -1,0 +1,21 @@
+.course__details{
+    width: 80%;
+    margin: 4rem auto;
+    display: flex;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, .6);
+}
+
+.image__container--d{
+    width: 50%%;
+}
+
+.course__img--d{
+    width: 100%;
+    display: block;
+    
+}
+.course__content--d{
+    width: 50%;
+    background-color: yellow;
+    padding-left: 1.4rem;
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import courses from '../../Data/courses.json';
+import './CourseDetails.css'
 
 const CourseDetails = (props) => {
     const courseID = props.match.params.id;
