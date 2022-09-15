@@ -11,14 +11,17 @@ class CourseList extends React.Component{
         this.state = {
             courses
         };
+       
     }
-
+    handleChange = event =>{
+        console.log(event.target.value)
+    }
     render() {
      return (
       <div className='itemList'>
 
          <form className='search__form'>
-            <input type='text' placeholder='search course' className='course__search' />
+            <input type='text' placeholder='search course' className='course__search' onChange={this.handleChange} />
          </form>
          <div className='courses'>
              {this.state.courses.map(course =>(
