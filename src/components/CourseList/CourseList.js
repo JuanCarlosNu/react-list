@@ -3,15 +3,31 @@ import courses from '../../Data/courses.json';
 import CourseItem from '../CourseItem/CourseItem.js';
 import  './courses.css';
 
-const CourseList = () => {
+//class based component:
 
-    if (courses.length === 0) return <div className='noItems'>No Items Found</div>;
+class CourseList extends React.Component{
+
+    render(){
+    if (courses.length === 0)
+     return <div className='noItems'>No Items Found</div>;
 
     return (
     <div className='courses'>
-        {courses.map(course => <CourseItem key={course.id} course={course} /> )}
+        {courses.map(course =>(
+             <CourseItem key={course.id} course={course} /> 
+            ))}
         </div>
-    );
+        );
+    }
+}
+
+
+
+
+const CourseList = () => {
+
+    
+    
 } ;
  
 export default CourseList;
