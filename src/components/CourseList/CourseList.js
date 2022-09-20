@@ -9,28 +9,36 @@ class CourseList extends React.Component{
         super()
 
         this.state = {
-            courses
+            courses,
+            inputSearch: ''
         };
        
     }
     handleChange = event =>{
-        console.log(event.target.value)
-    }
+        
+
+        this.setState(
+            {
+             inputSearch: event.target.value  
+            });
+        console.log(this.state.inputSearch)
+
+    };
     render() {
      return (
       <div className='itemList'>
 
          <form className='search__form'>
-            <input type='text' placeholder='search course' className='course__search' onChange={this.handleChange} />
+            <input type='text' placeholder='search course' className='course__search' onChange={this.handleChange} value={this.state.inputSearch}/>
          </form>
          <div className='courses'>
-             {this.state.courses.map(course =>(
+             {this.state.courses.map(course =>(     
              <CourseItem key={course.id} course={course} /> 
              ))}
            </div>
         </div>
-     );
-    }
+     );         
+    }   
 }
 
 
