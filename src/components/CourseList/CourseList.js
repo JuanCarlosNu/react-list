@@ -26,7 +26,7 @@ class CourseList extends React.Component{
     };
     render() {
 
-        const filterd = this.state.courses.filter( c => c.title.includes(this.state.inputSearch))
+        const filterd = this.state.courses.filter( c => c.title.toLowerCase().includes(this.state.inputSearch.toLocaleLowerCase()))
 
      return (
       <div className='itemList'>
@@ -38,7 +38,7 @@ class CourseList extends React.Component{
              onChange={this.handleChange} 
              value={this.state.inputSearch}/>
          </form>
-         
+
          <div className='courses'>
              {filterd.map(course =>(     
              <CourseItem key={course.id} course={course}
