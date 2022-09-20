@@ -21,19 +21,28 @@ class CourseList extends React.Component{
             {
              inputSearch: event.target.value  
             });
-        console.log(this.state.inputSearch)
+        console.log(this.state.inputSearch);
 
     };
     render() {
+
+        const filterd = this.state.courses.filter( c => c.title.includes(this.state.inputSearch))
+
      return (
       <div className='itemList'>
-
-         <form className='search__form'>
-            <input type='text' placeholder='search course' className='course__search' onChange={this.handleChange} value={this.state.inputSearch}/>
+        <form className='search__form'>
+            <input 
+            type='text'
+             placeholder='search course' 
+             className='course__search' 
+             onChange={this.handleChange} 
+             value={this.state.inputSearch}/>
          </form>
+         
          <div className='courses'>
-             {this.state.courses.map(course =>(     
-             <CourseItem key={course.id} course={course} /> 
+             {filterd.map(course =>(     
+             <CourseItem key={course.id} course={course}
+              /> 
              ))}
            </div>
         </div>
