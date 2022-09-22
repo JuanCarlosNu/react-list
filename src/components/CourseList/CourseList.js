@@ -31,21 +31,28 @@ class CourseList extends React.Component{
     render() {
         const filterd = this.state.courses.filter(c =>c.title.toLowerCase().includes(this.state.inputSearch.toLocaleLowerCase()))
 
-        const sort = filterd.sort((a, b) => a.price - b.price);
-
      return (
       <div className='itemList'>
         <form className='search__form'>
             <input 
             type='text'
              placeholder='search course' 
-             className='course__search' 
+             className={filterd.length === 0 ? 'course__search not-items-input' : 'course__search items-found-input'} 
              onChange={this.handleChange} 
              value={this.state.inputSearch}/>
          </form>
+         <select>
+            <option value="title">Title</option>
+            <option value="price">Price</option>
+            <option value="student">Student</option>
+         </select>
+         <select>
+            <option value="asc">asc</option>
+            <option value="desc">desc</option>
+         </select>
 
          <div className='courses'>
-            {sort.map(course => <CourseItem key={course.id} course={course}/> )}    
+            {filterd.length === 0 ? 'no items found' : filterd.map(course => <CourseItem key={course.id} course={course}/> )}    
        </div>
         </div>
      );         
