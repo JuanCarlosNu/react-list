@@ -10,20 +10,32 @@ class CourseList extends React.Component{
 
         this.state = {
             courses,
-            inputSearch: ''
+            inputSearch: '',
+            sortTerm: '',
+            sortOrder: 'asc',
+
         };
        
     }
     handleChange = event =>{
-        
-
-        this.setState(
-            {
-             inputSearch: event.target.value  
-            });
+      this.setState(
+            {inputSearch: event.target.value}
+            );
     };
 
-    
+    handleTerm = event =>{
+        this.setState(
+            {sortTerm: event.target.value}
+        );
+    };
+
+    handleOrder = event =>{
+        
+            this.setState(
+                {sortOrder: event.target.value}
+            );
+        };
+        
     
        
     
@@ -41,18 +53,22 @@ class CourseList extends React.Component{
              onChange={this.handleChange} 
              value={this.state.inputSearch}/>
          </form>
-         <select>
+         <select onChange={this.handleTerm}>
+            <option>Select item</option>
             <option value="title">Title</option>
             <option value="price">Price</option>
             <option value="student">Student</option>
          </select>
-         <select>
+         <select onChange={this.handleOrder}>
             <option value="asc">asc</option>
             <option value="desc">desc</option>
          </select>
 
          <div className='courses'>
-            {filterd.length === 0 ? 'no items found' : filterd.map(course => <CourseItem key={course.id} course={course}/> )}    
+            <h2>{this.state.sortTerm}</h2>
+            <h2>{this.state.sortOrder}</h2>
+            {filterd.length === 0 ? 'no items found' : filterd.map(course =>
+                 <CourseItem key={course.id} course={course}/> )}    
        </div>
         </div>
      );         
