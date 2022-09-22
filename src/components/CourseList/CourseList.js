@@ -23,18 +23,15 @@ class CourseList extends React.Component{
             });
     };
 
-    filterCourses = () => {
-    return this.state.courses
-    .filter(c =>
-         c.title
-        .toLowerCase()
-        .includes(this.state.inputSearch.toLocaleLowerCase())
-        )
-        .map(course => <CourseItem key={course.id} course={course}/> )
-    };
+    
+    
+       
+    
 
     render() {
- 
+        const filterd = this.state.courses.filter(c =>c.title.toLowerCase().includes(this.state.inputSearch.toLocaleLowerCase()))
+
+        const sort = filterd.sort((a, b) => a.price - b.price);
 
      return (
       <div className='itemList'>
@@ -48,7 +45,7 @@ class CourseList extends React.Component{
          </form>
 
          <div className='courses'>
-            {this.filterCourses()}    
+            {sort.map(course => <CourseItem key={course.id} course={course}/> )}    
        </div>
         </div>
      );         
