@@ -2,6 +2,8 @@ import React from 'react';
 import courses from '../../Data/courses.json';
 import CourseItem from '../CourseItem/CourseItem.js';
 import  './courses.css';
+import lodash from 'lodash';
+
 //class based component:
 class CourseList extends React.Component{
  //constructor function: this holds the mangment of the statements.
@@ -43,6 +45,8 @@ class CourseList extends React.Component{
     render() {
         const filterd = this.state.courses.filter(c =>c.title.toLowerCase().includes(this.state.inputSearch.toLocaleLowerCase()))
 
+        const sorted = lodash.orderBy(filterd , [this.state.sortTerm], [this.state.sortOrder] ) 
+
      return (
       <div className='itemList'>
         <form className='search__form'>
@@ -65,9 +69,8 @@ class CourseList extends React.Component{
          </select>
 
          <div className='courses'>
-            <h2>{this.state.sortTerm}</h2>
-            <h2>{this.state.sortOrder}</h2>
-            {filterd.length === 0 ? 'no items found' : filterd.map(course =>
+        
+            {sorted.length === 0 ? 'no items found' : sorted.map(course =>
                  <CourseItem key={course.id} course={course}/> )}    
        </div>
         </div>
