@@ -22,7 +22,7 @@ const App = () => {
         <Route path="/courses" exact component={CourseList} />
         <Route path="/jobs" exact component={Jobs} />
         <Route path="/blog" exact component={Blog} />
-        <Route path="/signup" exact component={Signup} />
+      
         <Redirect from="/" exact to="/home" />
         <Redirect to="/about"/>
         </Switch>
