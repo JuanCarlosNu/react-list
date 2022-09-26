@@ -20,7 +20,7 @@ const NavBar = () => {
             </div>
             <div className='header__buttons'>
                 <Link to='/login' className='btn btn-login'>Login</Link>
-                <Link to='/signup' className='btn btn-Signup'>Signup</Link>
+                <Link to='/Signup' className='btn btn-Signup'>Signup</Link>
             </div>
 
             
