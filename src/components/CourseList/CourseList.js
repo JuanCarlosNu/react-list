@@ -1,8 +1,10 @@
 import React from 'react';
+import lodash from 'lodash'; 
+
 import courses from '../../Data/courses.json';
 import CourseItem from '../CourseItem/CourseItem.js';
 import  './courses.css';
-import lodash from 'lodash';
+
 
 //class based component:
 class CourseList extends React.Component{
@@ -19,26 +21,13 @@ class CourseList extends React.Component{
         };
        
     }
-    handleChange = event =>{
-      this.setState(
-            {inputSearch: event.target.value}
-            );
-    };
-
-    handleTerm = event =>{
+  
+        
+    handleInput = event =>{
         this.setState(
-            {sortTerm: event.target.value}
-        );
-    };
-
-    handleOrder = event =>{
-        
-            this.setState(
-                {sortOrder: event.target.value}
-            );
-        };
-        
-    
+          { [event.target.name] : event.target.value}
+          )
+        }
        
     
 
@@ -52,18 +41,19 @@ class CourseList extends React.Component{
         <form className='search__form'>
             <input 
             type='text'
-             placeholder='search course' 
+             placeholder='search course'
+             name='inputSearch' 
              className={filterd.length === 0 ? 'course__search not-items-input' : 'course__search items-found-input'} 
-             onChange={this.handleChange} 
+             onChange={this.handleInput} 
              value={this.state.inputSearch}/>
          
-         <select className='sort__input' onChange={this.handleTerm}>
+         <select name='sortTerm' className='sort__input' onChange={this.handleInput}>
             <option>Select item</option>
             <option value="title">Title</option>
             <option value="price">Price</option>
             <option value="student">Student</option>
          </select>
-         <select className='order__input' onChange={this.handleOrder}>
+         <select name='sortOrder' className='order__input' onChange={this.handleInput}>
             <option value="asc">asc</option>
             <option value="desc">desc</option>
          </select>
