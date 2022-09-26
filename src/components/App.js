@@ -6,7 +6,7 @@ import About from "./About/About.js"
 import Blog from "./Blog/Blog.js"
 import Jobs from "./Jobs/Job.js"
 import CourseDetails from "./CourseDetails/CourseDetails.js"
-import Signup from "./Signup/Singup.js"
+
 
 
 
