@@ -4,6 +4,7 @@ import lodash from 'lodash';
 import courses from '../../Data/courses.json';
 import CourseItem from '../CourseItem/CourseItem.js';
 import  './courses.css';
+import CourseForm from '../courseForm/courseForm';
 
 
 //class based component:
@@ -38,26 +39,7 @@ class CourseList extends React.Component{
 
      return (
       <div className='itemList'>
-        <form className='search__form'>
-            <input 
-            type='text'
-             placeholder='search course'
-             name='inputSearch' 
-             className={filterd.length === 0 ? 'course__search not-items-input' : 'course__search items-found-input'} 
-             onChange={this.handleInput} 
-             value={this.state.inputSearch}/>
-         
-         <select name='sortTerm' className='sort__input' onChange={this.handleInput}>
-            <option>Select item</option>
-            <option value="title">Title</option>
-            <option value="price">Price</option>
-            <option value="student">Student</option>
-         </select>
-         <select name='sortOrder' className='order__input' onChange={this.handleInput}>
-            <option value="asc">asc</option>
-            <option value="desc">desc</option>
-         </select>
-         </form>
+       <CourseForm filterd={filterd} inputSearch={this.state.inputSearch} handleInput={this.handleInput} />
 
          <div className='courses'>
         
