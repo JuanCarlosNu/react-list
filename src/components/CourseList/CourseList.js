@@ -56,17 +56,18 @@ class CourseList extends React.Component{
              className={filterd.length === 0 ? 'course__search not-items-input' : 'course__search items-found-input'} 
              onChange={this.handleChange} 
              value={this.state.inputSearch}/>
-         </form>
-         <select onChange={this.handleTerm}>
+         
+         <select className='sort__input' onChange={this.handleTerm}>
             <option>Select item</option>
             <option value="title">Title</option>
             <option value="price">Price</option>
             <option value="student">Student</option>
          </select>
-         <select onChange={this.handleOrder}>
+         <select className='order__input' onChange={this.handleOrder}>
             <option value="asc">asc</option>
             <option value="desc">desc</option>
          </select>
+         </form>
 
          <div className='courses'>
         
