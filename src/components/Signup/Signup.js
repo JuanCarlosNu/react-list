@@ -16,10 +16,13 @@ const Signup = () => {
         initialValues={{name:"" , email: "" , password: "" }} 
         validationSchema={SignupSchema} 
         onSubmit={Signup}
-        render={() => (
+        render={({values, handleChange, errors, handleSubmit})=>(
             <div>
                 <h1>Signup</h1>
-               
+                <input value={values.name} onChange={handleChange} error={errors.name} name='name' type='text' placeholder='enter your name'/>
+                <input value={values.email} onChange={handleChange} error={errors.email} name='email' type='text' placeholder='enter your email'/>
+                <input value={values.password} onChange={handleChange} error={errors.password} name='password' type='text' placeholder='enter your password'/>
+                <button onClick={handleSubmit}>Signup</button>
             </div>
         )}
         />
