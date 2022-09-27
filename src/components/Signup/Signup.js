@@ -1,4 +1,5 @@
 import React from 'react';
+import { Formik } from 'formik';
 import *as Yup from 'yup';
 
 
@@ -9,11 +10,11 @@ const SignupSchema = Yup.object().shape({
 })
 
 const Signup = () => {
-    return ( 
-        <div>
-            <h1>Signup</h1>
-        </div>
-     );
-}
+    return 
+        <Formik
+        initialValues={{name:"" , email: "" , password: "" }} validationSchema={SignupSchema} 
+        />;
+     
+};
  
 export default Signup;
