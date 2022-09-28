@@ -8,7 +8,9 @@ const Input = ({onChange , value ,error , type , placeholder , name}) => {
          value={value}
          placeholder={placeholder}
          type={type}
-         name={name}/>
+         name={name}
+         autoComplete= 'off'
+         />
 <span>{error}</span>
 </div>
      );
