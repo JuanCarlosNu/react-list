@@ -19,11 +19,11 @@ const Login = () => {
             >
                 {
                    ({errors , touched}) => (
-                        <Form>
+                        <Form className='input__container'>
                             <Field name='email' 
                             type='email'
                              placeholder='enter your email' 
-                             className='input' 
+                             className={errors.email ? 'input input-error':'input input-no-error'} 
                              autocomplete='off' />
                              <span className='error'>{errors.email && touched.email ? errors.email: null}</span>
 
@@ -34,6 +34,7 @@ const Login = () => {
                                className='input'
                                 autocomplete='off' />
                                 <span className='error'>{errors.password && touched.password ? errors.password:null}</span>
+                                <button className='submit'>submit</button>
                         </Form>
                     )
                 }
