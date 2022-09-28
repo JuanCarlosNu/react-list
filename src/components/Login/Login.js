@@ -18,14 +18,14 @@ const Login = () => {
             onSubmit={Login}
             >
                 {
-                   ({errors}) => (
+                   ({errors , touched}) => (
                         <Form>
                             <Field name='email' 
                             type='email'
                              placeholder='enter your email' 
                              className='input' 
                              autocomplete='off' />
-                             <span className='error'>{errors.email}</span>
+                             <span className='error'>{errors.email && touched.email ? errors.email: null}</span>
 
 
                             <Field name='password'
@@ -33,7 +33,7 @@ const Login = () => {
                               placeholder='enter password'
                                className='input'
                                 autocomplete='off' />
-                                <span className='error'>{errors.password}</span>
+                                <span className='error'>{errors.password && touched.password ? errors.password:null}</span>
                         </Form>
                     )
                 }
