@@ -18,14 +18,21 @@ const Login = () => {
             onSubmit={Login}
             >
                 {
-                   () => (
+                   (props) => (
                         <Form>
-                            <Field name='email' type='email' placeholder='enter your email' className='input' autocomplete='off' />
+                            <Field name='email' 
+                            type='email'
+                             placeholder='enter your email' 
+                             className='input' 
+                             autocomplete='off' />
+                             
+                            {console.log(props)}
+
                             <Field name='password' type='password' placeholder='enter password' className='input' autocomplete='off' />
                         </Form>
                     )
                 }
-
+               
             </Formik>
         </div>
 
