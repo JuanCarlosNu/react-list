@@ -11,11 +11,11 @@
     transition: all .4s;
 }
 
-.input-error{
+.input-error:focus{
     outline: 6px solid red;
 }
 
-.input-no-error{
+.input-no-error:focus{
     outline: 6px solid rgb(58, 150, 12);
 }
 
