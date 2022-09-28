@@ -18,17 +18,22 @@ const Login = () => {
             onSubmit={Login}
             >
                 {
-                   (props) => (
+                   ({errors}) => (
                         <Form>
                             <Field name='email' 
                             type='email'
                              placeholder='enter your email' 
                              className='input' 
                              autocomplete='off' />
-                             
-                            {console.log(props)}
+                             <span className='error'>{errors.email}</span>
 
-                            <Field name='password' type='password' placeholder='enter password' className='input' autocomplete='off' />
+
+                            <Field name='password'
+                             type='password'
+                              placeholder='enter password'
+                               className='input'
+                                autocomplete='off' />
+                                <span className='error'>{errors.password}</span>
                         </Form>
                     )
                 }
