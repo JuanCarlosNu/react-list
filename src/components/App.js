@@ -7,6 +7,7 @@ import Blog from "./Blog/Blog.js"
 import Jobs from "./Jobs/Job.js"
 import CourseDetails from "./CourseDetails/CourseDetails.js"
 import Signup from "./Signup/Signup.js"
+import Login from "./Login/Login.js"
 
 
 
@@ -24,6 +25,7 @@ const App = () => {
         <Route path="/jobs" exact component={Jobs} />
         <Route path="/blog" exact component={Blog} />
         <Route path="/signup" exact component={Signup} />
+        <Route path="/login" exact component={Login} />
         <Redirect from="/" exact to="/home" />
         <Redirect to="/about"/>
         </Switch>
