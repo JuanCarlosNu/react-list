@@ -1,5 +1,5 @@
 import React from 'react';
-import { Formik } from 'formik';
+import { Formik , Form , Field} from 'formik';
 import * as Yup from 'yup';
 
 const loginValidationSchema = Yup.object().shape({
@@ -17,6 +17,14 @@ const Login = () => {
             validationSchema={loginValidationSchema}
             onSubmit={Login}
             >
+                {
+                   () => (
+                        <Form>
+                            <Field name='email' type='email' placeholder='enter your email' className='input' autocomplete='off' />
+                            <Field name='password' type='password' placeholder='enter password' className='input' autocomplete='off' />
+                        </Form>
+                    )
+                }
 
             </Formik>
         </div>
