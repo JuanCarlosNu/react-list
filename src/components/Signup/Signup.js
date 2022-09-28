@@ -2,6 +2,7 @@ import React from 'react';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import Input from '../input/input';
+import '../input/input.css'
 
 const signupSchema = Yup.object().shape({
     name: Yup.string()
@@ -27,7 +28,7 @@ const Signup = () => {
         onSubmit={signup}
         render={({values, handleChange, errors, handleSubmit})=>(
             <div>
-                <h1>Signup</h1>
+                <h1 className='form__title'>Signup</h1>
                 <Input 
                 value={values.name} 
                 onChange={handleChange}
@@ -52,7 +53,7 @@ const Signup = () => {
                 type="text" 
                 placeholder="enter your password"
                 />
-                <button onClick={handleSubmit}>Signup</button>
+                <button className='submit' onClick={handleSubmit}>Signup</button>
             </div>
         )} 
         />

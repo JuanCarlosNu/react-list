@@ -1,8 +1,9 @@
 import React from 'react';
+import './input.css'
 
 const Input = ({onChange , value ,error , type , placeholder , name}) => {
     return ( 
-        <div>
+        <div className='input__container'>
             <input 
          onChange={onChange}
          value={value}
@@ -10,8 +11,9 @@ const Input = ({onChange , value ,error , type , placeholder , name}) => {
          type={type}
          name={name}
          autoComplete= 'off'
+         className= {error ? 'input input-error' : 'input input-no-error' } 
          />
-<span>{error}</span>
+<span className='error'>{error}</span>
 </div>
      );
 };
