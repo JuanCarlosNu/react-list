@@ -2,20 +2,23 @@ import React from 'react';
 import { Formik , Form , Field} from 'formik';
 import * as Yup from 'yup';
 
+
 const loginValidationSchema = Yup.object().shape({
     email: Yup.string().email('invalid email').required('email can not be empty'),
     password: Yup.string().required('password can not be empty').min(6, 'at least 6 characters')
 })
 
 const Login = () => {
-    const login = () => {}
+    const login = values => {
+    console.log(values)
+};
     return ( 
         <div >
             <h1 className='form__title'>Login</h1>
             <Formik
             initialValues={{email:"" , password:""}}     
             validationSchema={loginValidationSchema}
-            onSubmit={Login}
+            onSubmit={login}
             >
                 {
                    ({errors , touched}) => (
@@ -24,7 +27,7 @@ const Login = () => {
                             type='email'
                              placeholder='enter your email' 
                              className={errors.email ? 'input input-error':'input input-no-error'} 
-                             autocomplete='off' />
+                             autoComplete='off' />
                              <span className='error'>{errors.email && touched.email ? errors.email: null}</span>
 
 
@@ -32,9 +35,9 @@ const Login = () => {
                              type='password'
                               placeholder='enter password'
                                className='input'
-                                autocomplete='off' />
+                                autoComplete='off' />
                                 <span className='error'>{errors.password && touched.password ? errors.password:null}</span>
-                                <button className='submit'>submit</button>
+                                <button className='submit' type='submit'>Login</button>
                         </Form>
                     )
                 }

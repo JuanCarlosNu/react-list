@@ -26,7 +26,9 @@ const Signup = () => {
         initialValues={{name:"" , email: "" , password: "" }} 
         validationSchema={signupSchema} 
         onSubmit={signup}
-        render={({values, handleChange, errors, handleSubmit})=>(
+     >
+
+{({values, handleChange, errors, handleSubmit})=>(
             <div>
                 <h1 className='form__title'>Signup</h1>
                 <Input 
@@ -56,7 +58,7 @@ const Signup = () => {
                 <button className='submit' onClick={handleSubmit}>Signup</button>
             </div>
         )} 
-        />
+      </Formik>
     );
 };
  
